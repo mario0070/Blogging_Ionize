@@ -10,40 +10,44 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="shortcut icon" href="" type="image/x-icon">
+  <link rel="shortcut icon" href="./images/stock-vector-bg-logo-605090093.jpg" type="image/x-icon">
 </head>
 <body>
+
+  <div class="fixedbtn" id="fixedbtn">
+    <button class="btn" id="toggleSideBar"><i class="fa-solid fa-bars"></i></button>
+  </div>
     
 
     <main>
         <div class="content">
             <div class="">
 
-                <div class=" side-bar">
+                <div class="side-bar" id="sideBar">
                     <div class="side-bar-content">
                       <div class="content">
 
                         <div class="head">
-                            <img src="./images/stock-vector-bg-logo-605090093.jpg" alt="">
-                            <h2>BLOGS</h2>
+                            <img src="./images/stock-vector-bg-logo-605090093.jpg" alt="" id="topImg">
+                            <h2 id="blogs">BLOGS</h2>
                         </div>
 
                         <div class="list">
                           <ul>
-                            <li><a href="#"><i class="fa-solid fa-house text-white mx-2"></i></a><a href="#">Home  </a></li>
-                            <li><a href=""><i class="fa-solid fa-plane text-white mx-2"></i></a><a href="">Travel </a></li>
-                            <li><a href=""><i class="fa-brands fa-itch-io text-white mx-2"></i></a><a href="">Tech </a></li>
-                            <li><a href=""><i class="fa-solid fa-camera-retro text-white mx-2"></i></a><a href="">Photography </a></li>
-                            <li><a href=""><i class="fa-solid fa-face-smile text-white mx-2"></i></a><a href="">About </a></li>
-                            <li><a href=""><i class="fa-regular fa-id-card text-white mx-2"></i></a><a href="">Contact</a></li>
+                            <li id="home"><a href="#"><i class="fa-solid fa-house text-white mx-2"></i></a><a href="#">Home  </a></li>
+                            <li id="travel"><a href=""><i class="fa-solid fa-plane text-white mx-2"></i></a><a href="">Travel </a></li>
+                            <li id="tech"><a href=""><i class="fa-brands fa-itch-io text-white mx-2"></i></a><a href="">Tech </a></li>
+                            <li id="photo"><a href=""><i class="fa-solid fa-camera-retro text-white mx-2"></i></a><a href="">Photography </a></li>
+                            <li id="about"><a href=""><i class="fa-solid fa-face-smile text-white mx-2"></i></a><a href="">About </a></li>
+                            <li id="contact"><a href=""><i class="fa-regular fa-id-card text-white mx-2"></i></a><a href="">Contact</a></li>
                           </ul>
                         </div>
 
                         <div class="email">
-                          <p>Subscribe for newsletter</p>
-                          <input type="email" name="" id="" placeholder="Enter Email Address">
+                          <p id="sub">Subscribe for newsletter</p>
+                          <input type="email" name="" id="subInput" placeholder="Enter Email Address">
                           <div class="button">
-                            <button class="btn btn-outline-light">OK</button>
+                            <button class="btn btn-outline-light" id="subBtn" data-bs-toggle="modal" data-bs-target="#modal">OK</button>
                           </div>
                         </div>
 
@@ -51,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="main-content">
+                <div class="main-content" id="mainContent">
 
                     <div class="heading">
                         <div class="image-container text-center img">
@@ -103,52 +107,60 @@
 
     <div class="main-content">
         <div class="articles">
-
+          <div class="search-input">
+            <form action="">
+              <span onclick="myFunction()" class="btn search-icon text-primary"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></span>
+              <input type="search" name="" id="myInput" placeholder="Search Categories">
+            </form>
+          </div>
           <div class="artcles-heading text-center">
             <h2>ARTICLES</h2>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
           </div>
 
-          <div class="articles-body">
+          <div class="row articles-body" id="result">
             
             <div class="row">
 
               <div class="col-sm-4 first">
-                <div class="sec-over">
-                  <div class="over-text">
-                    <h3 class="text-white">Fashion</h3>
-                    <span id="show-date2" class="text-white date-btn">date</span>
-                  </div>
-                </div>
-                <img src="./images/image_3.jpg" alt="">
-                <p>FASHION</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-regular fa-solid fa-heart" id="like" ></i>
-                  <sup id="likes-counter">23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye" id="seen"></i>
-                    <sup id="seen-counter">420</sup>
+                <div>
+                  <div class="sec-over">
+                    <div class="over-text">
+                      <h3 class="text-white">Fashion</h3>
+                      <span id="show-date2" class="text-white date-btn">date</span>
                     </div>
+                  </div>
+                  <img src="./images/image_3.jpg" alt="">
+                  <p>FASHION</p>
+                  <h3>Awesome Fashion Trend in For Summer</h3>
+                  <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                  <div class="d-flex">
+                    <div class="d-flex">
+                    <i class="fa-regular fa-solid fa-heart" id="like" ></i>
+                    <sup id="likes-counter">23</sup>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                      <sup>61</sup>
+                    </div>
+                    <div class="d-flex">
+                      <i class="fa-solid fa-eye" id="seen"></i>
+                      <sup id="seen-counter">420</sup>
+                      </div>
+                  </div>
+                  <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
                 </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+                
               </div>
 
-              <div class="col-sm-4 first">
+              <div class="col-sm-4 first" id="result">
                 <div class="sec-over">
                   <div class="over-text">
                     <h3 class="text-white">TECHNOLOGY</h3>
                     <span id="show-date3" class="text-white date-btn">date</span>
                   </div>
                 </div>
-                <img src="./images/image_1.jpg" alt="">
+                <img src="./images/3.png" alt="">
                 <p>TECHNOLOGY</p>
                 <h3>The Newest Technology On This Year 2019</h3>
                 <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
@@ -158,7 +170,7 @@
                   <sup>23</sup>
                   </div>
                   <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
                     <sup>61</sup>
                   </div>
                   <div class="d-flex">
@@ -169,16 +181,16 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4 first">
+              <div class="col-sm-4 first" id="result">
                 <div class="sec-over">
                   <div class="over-text">
                     <h3 class="text-white">TRAVEL</h3>
                     <span id="show-date4" class="text-white date-btn">date</span>
                   </div>
                 </div>
-                <img src="./images/image_6.jpg" alt="">
+                <img src="./images/image_5.jpg" alt="">
                 <p class="p">TRAVEL</p>
-                <h3>The Newest Technology On This Year 2019</h3>
+                <h3>The Most Awesome Beach in Asia</h3>
                 <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                 <div class="d-flex">
                   <div class="d-flex">
@@ -186,7 +198,7 @@
                   <sup>23</sup>
                   </div>
                   <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
                     <sup>61</sup>
                   </div>
                   <div class="d-flex">
@@ -200,223 +212,6 @@
             </div>
 
 
-             <div class="row">
-
-              <div class="col-sm-4">
-                <img src="./images/image_3.jpg" alt="">
-                <p>FASHION</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-              <div class="col-sm-4 ">
-                <img src="./images/image_1.jpg" alt="">
-                <p>TECHNOLOGY</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-              <div class="col-sm-4">
-                <img src="./images/image_6.jpg" alt="">
-                <p class="p">TRAVEL</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-            </div>
-
-
-            <div class="row">
-
-              <div class="col-sm-4">
-                <img src="./images/image_3.jpg" alt="">
-                <p>FASHION</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-              <div class="col-sm-4 ">
-                <img src="./images/image_1.jpg" alt="">
-                <p>TECHNOLOGY</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-              <div class="col-sm-4">
-                <img src="./images/image_6.jpg" alt="">
-                <p class="p">TRAVEL</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-            </div>
-
-            <div class="row">
-
-              <div class="col-sm-4 ">
-                <img src="./images/image_3.jpg" alt="">
-                <p>FASHION</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-              <div class="col-sm-4 ">
-                <img src="./images/image_1.jpg" alt="">
-                <p>TECHNOLOGY</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-              <div class="col-sm-4 ">
-                <img src="./images/image_6.jpg" alt="">
-                <p class="p">TRAVEL</p>
-                <h3>The Newest Technology On This Year 2019</h3>
-                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                <div class="d-flex">
-                  <div class="d-flex">
-                  <i class="fa-sharp fa-solid fa-heart"></i>
-                  <sup>23</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-comment"></i>
-                    <sup>61</sup>
-                  </div>
-                  <div class="d-flex">
-                    <i class="fa-solid fa-eye"></i>
-                    <sup>420</sup>
-                    </div>
-                </div>
-                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
-              </div>
-
-            </div>
-
-
-
-
-
-
-            <!-- carousel row -->
 
             <div class="row">
               <div class="col-sm-4 first">
@@ -428,7 +223,7 @@
                 <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="one">
                   <div class="carousel" data-bs-target="carousel">
                     <div class="fade-btn">
-                      <button class="text-primary" data-bs-target="#one" data-bs-slide="prev"><i class="la la-angle-right"></i></button>
+                      <button class="text-primary" data-bs-target="#one" data-bs-slide="prev"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
@@ -464,9 +259,9 @@
               </div>
 
               <div class="col-sm-4">
-                <img src="./images/image_2 (1).jpg" alt="">
-                <p>TRAVEL</p>
-                <h3>The Newest Technology On This Year 2019</h3>
+                <img src="./images/2.png" alt="">
+                <p>FOOD</p>
+                <h3>Lifting Weights Makes Your Nervous</h3>
                 <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
               </div>
 
@@ -476,10 +271,10 @@
                     <div class="role-btn">
                       <h4>Trending News</h4>
                       <button class="text-primary" data-bs-target="#two" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+                        <i class="fa-solid fa-arrow-left"></i>
                       </button>
                       <button class="text-primary" data-bs-target="#two" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
+                        <i class="fa-solid fa-arrow-right"></i>
                       </button>
                     </div>
                     <div class="carousel-inner text-center ">
@@ -534,6 +329,320 @@
               </div>
 
             </div>
+
+
+
+
+
+
+             <div class="row">
+
+              <div class="col-sm-4">
+                <img src="./images/11.png" alt="">
+                <p>EXCHANGE</p>
+                <h3>P2P Exchanges in Africa Pivot: Nigeria and Kenya</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4 ">
+                <img src="./images/4.png" alt="">
+                <p>FOOD</p>
+                <h3>Lifting Weights Makes Your Nervous</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4">
+                <img src="./images/image_4.jpg" alt="">
+                <p class="p">PLACES</p>
+                <h3>10 Most Awesome Place Ever Imagine</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+            </div>
+
+
+            <div class="row">
+
+              <div class="col-sm-4">
+                <img src="./images/image_7.jpg" alt="">
+                <p>FASHION</p>
+                <h3>7 Beginner Photographer’s Mistakes</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4 ">
+                <img src="./images/image_1.jpg" alt="">
+                <p>TECHNOLOGY</p>
+                <h3>The Newest Technology On This Year 2022</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4">
+                <img src="./images/image_6.jpg" alt="">
+                <p class="p">TRAVEL</p>
+                <h3>Top Amazing Places to Go in Summer</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-sm-4 ">
+                <img src="./images/13.png" alt="">
+                <p>EXCHANGE</p>
+                <h3>Bitcoin Network Now 7 Plants Worth of Power</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4 ">
+                <img src="./images/12.png" alt="">
+                <p>TECHNOLOGY</p>
+                <h3>Bitmex Restricts Ontario Residents as Mandated </h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4 ">
+                <img src="./images/image_12.jpg" alt="">
+                <p class="p">PLACES</p>
+                <h3>Visit the Most Amazing Place in North America</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+
+              <div class="col-sm-4 ">
+                <img src="./images/new_img/10.png" alt="">
+                <p>TECH</p>
+                <h3>Rocket Lab will resume launches no sooner than</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4 ">
+                <img src="./images/new_img/18.png" alt="">
+                <p>ART</p>
+                <h3>The FAA will test drone</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+              <div class="col-sm-4 ">
+                <img src="./images/new_img/image_10.jpg" alt="">
+                <p class="p">FASHION</p>
+                <h3>10 Best Way to Styling Your Lifestyle</h3>
+                <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
+                <div class="d-flex">
+                  <div class="d-flex">
+                  <i class="fa-sharp fa-solid fa-heart"></i>
+                  <sup>23</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-comment" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                    <sup>61</sup>
+                  </div>
+                  <div class="d-flex">
+                    <i class="fa-solid fa-eye"></i>
+                    <sup>420</sup>
+                    </div>
+                </div>
+                <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
+              </div>
+
+            </div>
+
+
+
+            <div class="modal" id="modal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content text-center p-3">
+                  <div class="modal-header">
+                    <h2 class="text-white">Comment</h2>
+                    <button class="btn-close" data-bs-target="#modal" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <input type="text" id="commentName" placeholder="Name" class="d-block" onkeyup="CommentValid()">
+                    <textarea class="d-block " onkeyup="CommentValid()" id="commentArea" cols="10" rows="7" placeholder="Write a Comment"></textarea>
+                    <button class="btn" id="comment" disabled>Comment</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-info"data-bs-dismiss="modal" data-bs-target="#modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            
 
 
           </div>
