@@ -15,7 +15,13 @@
 <body id="body">
 
   <div class="fixedbtn" id="fixedbtn">
-    <button class="btn" id="toggleSideBar"><i class="fa-solid fa-bars"></i></button>
+    <button class="btn" id="toggleSideBar"><i class="fa-solid fa-bars" id="toggleSideBars"></i></button>
+  </div>
+
+  <div class="toggleDark">
+    <p class="btn"><span class="text-light" id="dark">Dark</span>
+      <i class="fa-solid fa-toggle-off" id="toggleDark" onclick="ToggleIcon(this),ToggleText()"></i>
+    </p>
   </div>
     
 
@@ -24,7 +30,7 @@
             <div class="">
 
                 <div class="side-bar" id="sideBar">
-                    <div class="side-bar-content">
+                    <div class="side-bar-content" id="sideBarContent">
                       <div class="content">
 
                         <div class="head">
@@ -61,7 +67,7 @@
                         <div class="image-container text-center img">
                             <div class="carousel" data-bs-ride="carousel" id="carousel">
                                 <div class="carousel" data-bs-target="#carousel">
-                                  <div class="carimage carousel-inner reveal">
+                                  <div class="carimage carousel-inner">
                                     <div class="carousel-item active" data-bs-interval="10000">
                                       <img src="./images/image_1.jpg" alt="" class="d-block">
                                       <div class="carousel-caption text-white">
@@ -105,22 +111,22 @@
         </div>
     </main>
 
-    <div class="main-content">
+    <div class="main-content" id="main-content">
         <div class="articles">
           <div class="search-input">
             <form action="">
-              <span onclick="myFunction()" class="btn search-icon text-primary"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></span>
+              <span onclick="myFunction()" class="btn search-icon text-primary"><i class="fa-sharp fa-solid fa-magnifying-glass text-primary"></i></span>
               <input type="search" name="" id="myInput" placeholder="Search Categories">
             </form>
           </div>
           <div class="artcles-heading text-center">
-            <h2>ARTICLES</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
+            <h2 class="artH2">ARTICLES</h2>
+            <p class="artH2">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
           </div>
 
           <div class="row articles-body" id="result">
             
-            <div class="row">
+            <div class="row reveal">
 
               <div class="col-sm-4 first">
                 <div>
@@ -214,7 +220,7 @@
 
 
             <div class="row">
-              <div class="col-sm-4 first">
+              <div class="col-sm-4 reveals">
                 <div class="sec-over">
                   <div class="over-text">
                     <h3 class="text-white">Latest News</h3>
@@ -223,7 +229,7 @@
                 <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="one">
                   <div class="carousel" data-bs-target="carousel">
                     <div class="fade-btn">
-                      <button class="text-primary" data-bs-target="#one" data-bs-slide="prev"><i class="fa-solid fa-arrow-right"></i></button>
+                      <button id="carBtn" class="text-primary" data-bs-target="#one" data-bs-slide="prev"><i class="fa-solid fa-arrow-right text-primary"></i></button>
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
@@ -239,7 +245,7 @@
                         <img src="./images/image_3.jpg" alt="" class="d-block">
                         <div class="para">
                           <p>FASHION</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <h3>Awesome Fashion Trend in For Summer</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                         </div>
                       </div>
@@ -248,9 +254,9 @@
                         <img src="./images/image_6.jpg" alt="" class="d-block">
                         <div class="para">
                           <p>TRAVEL</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <h3>Top Amazing Places to Go in Summer</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
-                        </div>
+                          </div>
                       </div>
                     </div>
             
@@ -258,36 +264,36 @@
                 </div>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 reveals1">
                 <img src="./images/2.png" alt="">
                 <p>FOOD</p>
                 <h3>Lifting Weights Makes Your Nervous</h3>
                 <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 reveals2">
                 <div class="carousel slide carousel-dark" data-bs-ride="carousel" id="two">
                   <div class="carousel" data-bs-target="carousel">
                     <div class="role-btn">
                       <h4>Trending News</h4>
                       <button class="text-primary" data-bs-target="#two" data-bs-slide="prev">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <i class="fa-solid fa-arrow-left text-primary"></i>
                       </button>
                       <button class="text-primary" data-bs-target="#two" data-bs-slide="next">
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right text-primary"></i>
                       </button>
                     </div>
-                    <div class="carousel-inner text-center ">
+                    <div class="carousel-inner">
                       <div class="carousel-item active">
                         <div class="para">
-                          <p>TRAVEL</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <p>FOOD</p>
+                          <h3>Lifting Weights Makes Your Nervous</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                           <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
                         </div>
                         <div class="para mt-3">
                           <p>TRAVEL</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <h3>Top Amazing Places to Go in Summer</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                           <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
                         </div>
@@ -295,14 +301,14 @@
             
                       <div class="carousel-item">
                         <div class="para">
-                          <p>TRAVEL</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <p>EXCHANGE</p>
+                          <h3>P2P Exchanges in Africa Pivot: Nigeria and Kenya</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                           <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
                         </div>
                         <div class="para mt-3">
-                          <p>TRAVEL</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <p>TECH</p>
+                          <h3>Rocket Lab will resume launches no sooner than</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                           <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
                         </div>
@@ -310,14 +316,14 @@
             
                       <div class="carousel-item">
                         <div class="para">
-                          <p>TRAVEL</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <p>TECHNOLOGY</p>
+                          <h3>The Newest Technology On This Year 2022</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                           <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
                         </div>
                         <div class="para mt-3">
-                          <p>TRAVEL</p>
-                          <h3>The Newest Technology On This Year 2019</h3>
+                          <p class="p">PLACES</p>
+                          <h3>10 Most Awesome Place Ever Imagine</h3>
                           <span>Even the all-powerful Pointing has no control about the blind texts it is an almost</span>
                           <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
                         </div>
@@ -337,7 +343,7 @@
 
              <div class="row">
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 reveals">
                 <img src="./images/11.png" alt="">
                 <p>EXCHANGE</p>
                 <h3>P2P Exchanges in Africa Pivot: Nigeria and Kenya</h3>
@@ -359,7 +365,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals1">
                 <img src="./images/4.png" alt="">
                 <p>FOOD</p>
                 <h3>Lifting Weights Makes Your Nervous</h3>
@@ -381,7 +387,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 reveals2">
                 <img src="./images/image_4.jpg" alt="">
                 <p class="p">PLACES</p>
                 <h3>10 Most Awesome Place Ever Imagine</h3>
@@ -408,7 +414,7 @@
 
             <div class="row">
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 reveals">
                 <img src="./images/image_7.jpg" alt="">
                 <p>FASHION</p>
                 <h3>7 Beginner Photographer’s Mistakes</h3>
@@ -430,7 +436,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals1">
                 <img src="./images/image_1.jpg" alt="">
                 <p>TECHNOLOGY</p>
                 <h3>The Newest Technology On This Year 2022</h3>
@@ -452,7 +458,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 reveals2">
                 <img src="./images/image_6.jpg" alt="">
                 <p class="p">TRAVEL</p>
                 <h3>Top Amazing Places to Go in Summer</h3>
@@ -478,7 +484,7 @@
 
             <div class="row">
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals">
                 <img src="./images/13.png" alt="">
                 <p>EXCHANGE</p>
                 <h3>Bitcoin Network Now 7 Plants Worth of Power</h3>
@@ -500,7 +506,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals1">
                 <img src="./images/12.png" alt="">
                 <p>TECHNOLOGY</p>
                 <h3>Bitmex Restricts Ontario Residents as Mandated </h3>
@@ -522,7 +528,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals2">
                 <img src="./images/image_12.jpg" alt="">
                 <p class="p">PLACES</p>
                 <h3>Visit the Most Amazing Place in North America</h3>
@@ -551,7 +557,7 @@
 
             <div class="row">
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals">
                 <img src="./images/new_img/10.png" alt="">
                 <p>TECH</p>
                 <h3>Rocket Lab will resume launches no sooner than</h3>
@@ -573,7 +579,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals1">
                 <img src="./images/new_img/18.png" alt="">
                 <p>ART</p>
                 <h3>The FAA will test drone</h3>
@@ -595,7 +601,7 @@
                 <a href="" class="btn btn-outline-info">Continue reading &#8680;</a>
               </div>
 
-              <div class="col-sm-4 ">
+              <div class="col-sm-4 reveals2">
                 <img src="./images/new_img/image_10.jpg" alt="">
                 <p class="p">FASHION</p>
                 <h3>10 Best Way to Styling Your Lifestyle</h3>
@@ -621,7 +627,7 @@
 
 
 
-            <div class="modal" id="modal">
+            <div class="modal fade" id="modal">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content text-center p-3">
                   <div class="modal-header">

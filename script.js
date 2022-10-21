@@ -87,27 +87,48 @@ const myFunction = () => {
 
 
 // show toggle side bar on scroll
-window.addEventListener("scroll",reveal)
+window.addEventListener("scroll",reveals)
 
-function reveal(){
+function reveals(){
   var reveals=document.querySelectorAll(".reveal")
 
   for (var i = 0 ; i < reveals.length ;i++){
       var windowh=window.innerHeight;
       var revealt=reveals[i].getBoundingClientRect().top;
-      var revealp=1300;
+      var revealp=400;
 
       if(revealt < windowh - revealp){
-          reveals[i].classList.add("active")
           fixedbtn.classList.add("valid")
       
       }
       else{
           fixedbtn.classList.remove("valid")
-          reveals[i].classList.remove("active")
-          
       }
   }
+}
+
+
+// show element on scroll
+window.addEventListener("scroll",reveal)
+
+function reveal(){
+    var reveals=document.querySelectorAll(".reveals")
+    var reveals1=document.querySelectorAll(".reveals1")
+    var reveals2=document.querySelectorAll(".reveals2")
+
+    for (var i = 0 ; i < reveals.length ;i++){
+        var windowh=window.innerHeight;
+        var revealt=reveals[i].getBoundingClientRect().top;
+        var revealp=200;
+
+        if(revealt < windowh + revealp){
+            reveals[i].classList.add("active")
+            reveals1[i].classList.add("active")
+            reveals2[i].classList.add("active")
+        
+        }
+        
+    }
 }
 
 
@@ -173,8 +194,50 @@ toggleBar.addEventListener("click", () => {
   body.classList.toggle("valid")
 })
 
+
+
 $(document).ready(()=>{
   $("#sub").click(()=>{
-    $(".main-content").load("contact.html")
+    setTimeout(()=>{
+      $(".main-content").load("contact.html")
+    },3000)
+    setTimeout(()=>{
+      alert("ye")
+    },5000)
+    // $(".main-content").load("contact.html")
   })
+})
+
+
+
+// Toggle icon
+function ToggleIcon(x) {
+  x.classList.toggle("fa-toggle-on");
+}
+
+//Toggle dark mode text
+function ToggleText() {
+  var dark = document.getElementById("dark");
+  if (dark.innerHTML === "Dark") {
+    dark.innerHTML = "Light";
+  } else {
+    dark.innerHTML = "Dark";
+  }
+}
+
+
+
+//Toggle Dark Mode
+var toggleDark = document.getElementById("toggleDark")
+var sideBarContent = document.getElementById("sideBarContent")
+var body = document.getElementById("body")
+var mainContent = document.getElementById("main-content")
+var toggleSideBar = document.getElementById("toggleSideBars")
+var carBtn = document.getElementById("carBtn")
+toggleDark.addEventListener("click",()=>{
+  sideBarContent.classList.toggle("valid")
+  body.classList.toggle("active")
+  mainContent.classList.toggle("active")
+  toggleSideBar.classList.toggle("active")
+  carBtn.classList.toggle("active")
 })

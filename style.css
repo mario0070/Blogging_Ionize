@@ -11,7 +11,7 @@ body{
 
 main .side-bar{
     background: url(./images/image_2\ \(1\).jpg);
-    transition: 1s;
+    transition: .5s;
     height: 100%;
     position: fixed;
     width: 0%;
@@ -47,6 +47,12 @@ main .side-bar-content{
     width: 100%;
     position: absolute;
     background-color: rgba(57, 131, 241, 0.575);
+    transition: .5s;
+}
+
+#sideBarContent.valid{
+  background-color: rgba(0, 0, 0, 0.566);
+  transition: .5s;
 }
 
 main .side-bar-content .content{
@@ -122,6 +128,46 @@ main .main-content{
 
 }
 
+#main-content.active h3,#main-content.active span , #main-content.active sup ,#main-content.active h4 , #main-content.active .artH2,#main-content.active i{
+  transition: .5s;
+  color: whitesmoke;
+}
+
+#toggleSideBars.active{
+  color: white;
+}
+
+#carBtn.active{
+  background-color: rgba(0, 0, 0, 0.685);
+}
+
+#body{
+  transition: .5s;
+}
+
+#body.active{
+  transition: .5s;
+  animation: Blink 4s infinite ease-in-out;
+}
+
+@keyframes Blink {
+  from{
+    background-color: rgba(0, 0, 0, 0.826);
+  }
+
+  30%{
+    background-color: rgba(0, 0, 0, 0.731);
+  }
+
+  60%{
+    background-color: rgba(0, 0, 0, 0.685);
+  }
+
+  to{
+    background-color: rgba(0, 0, 0, 0.826);
+  }
+}
+
 main .heading{
     height: 500px;
     position: relative;
@@ -165,16 +211,16 @@ main .carousel-item p{
 }
 
 .search-input{
-  display: none;
+  display: inline;
   position: absolute;
-  transform: translateX(270px) translateY(-58px);
+  transform: translateX(70px) translateY(-58px);
 }
 
 .search-input input{
   text-align: center;
   box-shadow: .1em .1em  .5em rgba(0, 0, 0, 0.192);
   outline: none;
-  width: 30em;
+  width: 100%;
   padding: 1em;
   border: none;
   border-radius: .5em;
@@ -182,13 +228,16 @@ main .carousel-item p{
   font-weight: 900;
 }
 
-/* .main-content{
-    width: 77%;
-    margin-left: 23%;
-} */
+.search-input .search-icon{
+  position: absolute;
+  right: 0;
+  transform: translateY(5px) translateX(0px);
+  font-size: 1.2em;
+}
+
 
 .main-content .artcles-heading h2{
-  margin-top: 2em;
+  margin-top: 0em;
 }
 
 .main-content .artcles-heading{
@@ -534,7 +583,7 @@ main .carousel-item p{
 
   .fixedbtn{
     position: fixed;
-    z-index: 200;
+    z-index: 2000;
     right: 0;
     /* display: none; */
     font-size: 2em;
@@ -548,6 +597,10 @@ main .carousel-item p{
     color: rgba(0, 0, 0, 0.553);
   }
 
+  .fixedbtn button{
+    outline: none;
+  }
+
 
   #fixedbtn.valid{
     opacity: 1.0;
@@ -557,7 +610,66 @@ main .carousel-item p{
   }
 
 
+  
+.reveals{
+  transform: translateY(350px);
+  opacity: 0;
+}
 
+.reveals.active{
+  opacity: 1;
+  transform: translateY(0px);
+  transition:all 1s ease;
+  transition: 1s;
+}
+
+.reveals1{
+  transform: translateY(550px);
+  opacity: 0;
+}
+
+.reveals1.active{
+  opacity: 1;
+  transform: translateY(0px);
+  transition:all 1s ease;
+  transition: 1s;
+}
+
+.reveals2{
+  transform: translateY(750px);
+  opacity: 0;
+}
+
+.reveals2.active{
+  opacity: 1;
+  transform: translateY(0px);
+  transition:all 1s ease;
+  transition: 1s;
+}
+
+.toggleDark{
+  position: absolute;
+  z-index: 200;
+  right: 0;
+  margin-right: 0em;
+}
+
+.toggleDark span{
+  font-size: 1.3em;
+  color: white;
+  transition: 1s;
+  font-weight: 900;
+}
+
+.toggleDark i{
+  font-size: 1.5em;
+  transition: 1s;
+  color: white;
+}
+
+.toggleDark button{
+  outline: red;
+}
 
 
 
@@ -585,13 +697,14 @@ main .carousel-item p{
   .search-input{
     display: inline;
     position: absolute;
-    transform: translateX(270px) translateY(-62px);
+    transform: translateX(290px) translateY(-62px);
   }
 
   .search-input .search-icon{
     position: absolute;
-    transform: translateY(5px);
+    transform: translateY(5px) translateX(-50px);
     font-size: 1.2em;
+    left: 0;
   }
 
     .main-content{
@@ -626,6 +739,7 @@ main .carousel-item p{
     cursor: pointer;
   }
 
+
   .date-btn{
     background-color: rgba(255, 255, 255, 0.354);
     padding: .2em;
@@ -654,6 +768,19 @@ main .carousel-item p{
     background: rgb(213,99,19);
     background: linear-gradient(90deg, rgba(213,99,19,0.9616888991924895) 3%, rgba(224, 164, 25, 0.559) 41%);
     
+    }
+
+
+    .search-input input{
+      text-align: center;
+      box-shadow: .1em .1em  .5em rgba(0, 0, 0, 0.192);
+      outline: none;
+      width: 200%;
+      padding: 1em;
+      border: none;
+      border-radius: .5em;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: 900;
     }
     
 
