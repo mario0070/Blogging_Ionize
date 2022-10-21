@@ -165,10 +165,12 @@ var toggleBar=document.getElementById("toggleSideBar")
 var sideBar=document.getElementById("sideBar")
 var mainContent= document.getElementById("mainContent")
 var result = document.getElementById("result")
+var body=document.getElementById("body")
 toggleBar.addEventListener("click", () => {
   sideBar.classList.toggle("valid")
   mainContent.classList.toggle("valid")
   result.classList.toggle("valid")
+  body.classList.toggle("valid")
 })
 
 $(document).ready(()=>{

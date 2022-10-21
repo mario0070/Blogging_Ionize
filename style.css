@@ -19,21 +19,26 @@ main .side-bar{
     text-align: center;
     box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.189);
     background-size: cover;
+    z-index: 1000;
 }
 
 #sideBar.valid{
-  width:100%;
+  width:30%;
 }
 
 #mainContent.valid {
-  width: 0%;
-  margin-left: 100%;
-  opacity: 0.0;
+  /* width: 0%; */
+  /* margin-left: 70%; */
+  opacity: 0.4;
 }
 
 #result.valid{
-  opacity: 0.0;
-  transition: .2s;
+  opacity: 0.4;
+  transition: 1s;
+}
+
+#body.valid{
+  overflow: hidden;
 }
 
 main .side-bar-content{
@@ -60,6 +65,7 @@ main .side-bar-content .content .head h2{
     color: whitesmoke;
     font-weight: 900;
     transform: translateX(300px);
+    margin-bottom: .5em;
 }
 
 main .side-bar-content .content .email p{
@@ -81,13 +87,14 @@ main .side-bar-content .content .button{
 }
 
 main .side-bar-content .content button{
-    width: 8em;
+    width: 4em;
 }
 
 .list a{
     color: whitesmoke;
     text-decoration: none;
     transition: 1s;
+    display: none;
 }
 
 
@@ -97,7 +104,7 @@ ul{
 
 li{
     list-style-type: none;
-    margin-bottom: .8em;
+    margin-bottom: 1.8em;
     text-align: start;
     font-size: 1.2em;
     font-weight: 900;
@@ -214,7 +221,7 @@ main .carousel-item p{
     width: 100%;
     padding: 2em;
     max-width: 1440px;
-    transition: 4.2s;
+    transition: 1s;
   }
 
   .articles-body img{
@@ -556,6 +563,19 @@ main .carousel-item p{
 
 
   @media screen and (min-width:600px) {
+
+    li{
+      list-style-type: none;
+      margin-bottom: .8em;
+    }
+
+    main .side-bar-content .content button{
+      width: 8em;
+    }
+
+    .list a{
+      display: inline;
+    }
 
     main .side-bar{
       width: 23%;
