@@ -199,20 +199,6 @@ toggleBar.addEventListener("click", () => {
 
 
 
-$(document).ready(()=>{
-  $("#sub").click(()=>{
-    setTimeout(()=>{
-      $(".main-content").load("contact.html")
-    },3000)
-    setTimeout(()=>{
-      alert("ye")
-    },5000)
-    // $(".main-content").load("contact.html")
-  })
-})
-
-
-
 // Toggle icon
 function ToggleIcon(x) {
   x.classList.toggle("fa-toggle-on");
@@ -234,6 +220,7 @@ var showMedial = document.getElementById("showMedial")
 var arrowOut = document.getElementById("arrowOut")
 arrowOut.addEventListener("click",()=>{
   showMedial.classList.toggle("active")
+  arrowOut.classList.toggle("actives")
 })
 
 

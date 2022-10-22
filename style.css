@@ -273,7 +273,7 @@ main .carousel-item p{
     transition: 1s;
   }
 
-  .articles-body img{
+  .articles-body .col-sm-4 img{
     width: 250px;
     height: 350px;
     border-radius: .5em;
@@ -686,7 +686,12 @@ main .carousel-item p{
 
 #arrowOut{
   font-size: 1.5em;
-  animation: arrow 3s infinite ease-in-out ;
+}
+
+#arrowOut.actives{
+  transform: rotate(180deg);
+  transition: .5s;
+
 }
 
 .showMedial{
@@ -706,7 +711,6 @@ main .carousel-item p{
 
 #showMedial.valid{
   transform: translateX(204px) translateY(0px);
-  /* transform: translateY(0px); */
   transition: 1s;
   opacity: 1.0;
 }
@@ -714,12 +718,6 @@ main .carousel-item p{
 #showMedial.active{
   transform: translateX(0px);
   transition: .5s;
-}
-
-@keyframes arrow {
-  from{transform: translateX(-8px);}
-  50%{transform: translateX(8px);}
-  to{transform: translateX(-8px);}
 }
 
 footer{
@@ -758,6 +756,84 @@ footer .p{
   font-family: 'Courier New', Courier, monospace;
   margin-top: 2em;
 }
+
+.scroll{
+  margin-left: 0%;
+  margin-bottom: 8em;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.132);
+  border-radius: .3em;
+}
+
+
+.scroll .slider{
+  display: flex;
+  transition: 1s;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  animation: primary 30s ease-in-out  infinite;
+}
+
+@keyframes primary {
+  from{transform: translateX(0px);}
+  10%{transform: translateX(-300px);}
+  20%{transform: translateX(-600px);}
+  30%{transform: translateX(-900px);}
+  40%{transform: translateX(-1200px);}
+  50%{transform: translateX(-1500px);}
+  60%{transform: translateX(-1800px);}
+  70%{transform: translateX(-2100px);}
+  80%{transform: translateX(-2250px);}
+  to{transform: translateX(-0px);}
+
+}
+
+.scroll .slider .slide{
+  object-fit: cover;
+}
+
+.scroll img{
+  width: 300px;
+  height: 400px;
+}
+
+.scroll .over{
+  background-color: rgba(0, 0, 0, 0.269);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 50;
+  text-align: center;
+}
+
+.scroll .over2{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 50;
+  text-align: center;
+}
+
+.scroll .over2 h2{
+  transform: translateX(-10px);
+  margin-top: 2em;
+  color: whitesmoke;
+  font-weight: 900;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2em;
+}
+
+.scroll .over2 p{
+  transform: translateX(-10px);
+  font-size: 1.3em;
+  color: rgba(245, 245, 245, 0.753);
+  font-weight: 900;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 
 
@@ -878,5 +954,15 @@ footer .p{
     }
     
 
+    .scroll{
+      margin-bottom: 8em;
+      overflow: hidden;
+      position: relative;
+      height: 400px;
+    }
   
+    .scroll .over2 h2{
+      margin-top: 4em
+    }
+
   }
