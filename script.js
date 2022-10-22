@@ -92,6 +92,8 @@ window.addEventListener("scroll",reveals)
 function reveals(){
   var reveals=document.querySelectorAll(".reveal")
   var showMedial = document.getElementById("showMedial")
+  var goUp = document.getElementById("goUp")
+
 
   for (var i = 0 ; i < reveals.length ;i++){
       var windowh=window.innerHeight;
@@ -101,11 +103,13 @@ function reveals(){
       if(revealt < windowh - revealp){
           fixedbtn.classList.add("valid")
           showMedial.classList.add("valid")
+          goUp.classList.add("valid")
       
       }
       else{
           fixedbtn.classList.remove("valid")
           showMedial.classList.remove("valid")
+          goUp.classList.remove("valid")
       }
   }
 }

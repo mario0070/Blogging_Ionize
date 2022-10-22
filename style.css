@@ -11,7 +11,7 @@ body{
 
 main .side-bar{
     background: url(./images/image_2\ \(1\).jpg);
-    transition: .5s;
+    transition: .2s;
     height: 100%;
     position: fixed;
     width: 0%;
@@ -23,7 +23,7 @@ main .side-bar{
 }
 
 #sideBar.valid{
-  width:30%;
+  width:60%;
 }
 
 #mainContent.valid {
@@ -100,7 +100,7 @@ main .side-bar-content .content button{
     color: whitesmoke;
     text-decoration: none;
     transition: 1s;
-    display: none;
+    /* display: none; */
 }
 
 
@@ -834,12 +834,88 @@ footer .p{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.goUp{
+  position: fixed;
+  z-index: 4000;
+  right: 0;
+  bottom: 0;
+  transform: translateY(1300px);
+  transition: 1s;
+}
+
+
+
+#goUp.valid{
+  transform:translateY(-100px) rotate(90deg) translateY(10px);
+  transition: 1s;
+  opacity: 1.0;
+}
+
+.goUp i{
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.066);
+  padding: .5em;
+  border-radius: .3em;
+}
+
+
+
+.goUp .arrow1{
+  position: absolute;
+  animation: arrowUp1 1s infinite ease-in-out;
+}
+
+.goUp .arrow2{
+  position: absolute;
+  animation: arrowUp2 1s infinite ease-in-out;
+}
+
+.goUp .arrow3{
+  position: absolute;
+  animation: arrowUp3 1s infinite ease-in-out;
+}
+
+.goUp .arrow4{
+  position: absolute;
+  transform: translateX(0px);
+  animation: arrowUp4 1s infinite ease-in-out;
+}
+
+@keyframes arrowUp1{
+  from{transform: translateX(20px);}
+  50%{transform: translateX(-10px);}
+  to{transform: translateX(20px);}
+}
+
+@keyframes arrowUp2{
+  from{transform: translateX(0px);opacity:1.0;}
+  50%{transform: translateX(-10px);opacity: 0.0;}
+  to{transform: translateX(0px);opacity: 1.0;}
+}
+
+@keyframes arrowUp3{
+  from{transform: translateX(25px);opacity: 1.0;}
+  50%{transform: translateX(-10px);opacity: 0.0;}
+  to{transform: translateX(25px);opacity: 1.0;}
+}
+
+@keyframes arrowUp4{
+  from{transform: translateX(15px);opacity: 1.0;}
+  50%{transform: translateX(-10px);opacity: 0.0;}
+  to{transform: translateX(15px);opacity: 1.0;}
+}
 
 
 
 
   @media screen and (min-width:600px) {
 
+
+    /* .list i{
+      display: inline;
+    } */
+
+    
     li{
       list-style-type: none;
       margin-bottom: .8em;
