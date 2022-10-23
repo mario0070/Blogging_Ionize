@@ -2,7 +2,11 @@ body{
     padding: 0;
     margin: 0;
     transition: 1s;
-    /* max-width: 1440px; */
+    scroll-behavior: smooth;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar{
@@ -27,8 +31,6 @@ main .side-bar{
 }
 
 #mainContent.valid {
-  /* width: 0%; */
-  /* margin-left: 70%; */
   opacity: 0.4;
 }
 
@@ -100,7 +102,6 @@ main .side-bar-content .content button{
     color: whitesmoke;
     text-decoration: none;
     transition: 1s;
-    /* display: none; */
 }
 
 
@@ -367,13 +368,13 @@ main .carousel-item p{
     margin-bottom: 5em;
   }
 
-  #like.valid{
+  #like.valid,#like1.valid,#like2.valid,#like3.valid,#like4.valid,#like5.valid,#like6.valid,#like7.valid,#like8.valid,#like9.valid,#like10.valid,#like11.valid,#like12.valid,#like13.valid,#like14.valid,#like15.valid{
     color: red;
     transition: .8s;  
     transform: scale(1.2) rotateY(360deg);
   }
 
-  #seen.valid{
+  #seen.valid,#seen1.valid,#seen2.valid,#seen3.valid,#seen4.valid,#seen5.valid,#seen6.valid,#seen7.valid,#seen8.valid,#seen9.valid,#seen10.valid,#seen11.valid,#seen12.valid,#seen13.valid,#seen14.valid,#seen15.valid{
     color: rgba(57, 152, 235, 0.909);
     transition: .8s;
     transform: scale(1.2) rotateY(360deg);
